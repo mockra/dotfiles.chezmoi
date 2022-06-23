@@ -1,0 +1,8 @@
+{{ $codespaces := env "CODESPACES" | not | not -}}
+{{ $email := "david@mockra.com" -}}
+
+[data]
+  codespaces = {{ $codespaces }}
+
+[data.user]
+  email = {{ $email | quote }}

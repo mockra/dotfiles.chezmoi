@@ -20,4 +20,4 @@ else
 fi
 
 # Apply from dotfiles repo, ignore our local dotfiles.
-exec "$chezmoi" init mockra --apply --verbose
+exec "$chezmoi" init --apply --verbose https://github.com/mockra/dotfiles.chezmoi.git

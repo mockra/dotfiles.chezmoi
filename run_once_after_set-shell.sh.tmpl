@@ -1,6 +1,6 @@
 #!/usr/bin/env -S bash -x
 
-{{ if .codespaces -}}
+{{ if (eq .chezmoi.os "linux") -}}
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 echo "$(which fish)" | sudo tee -a /etc/shells
 sudo chsh -s $(which fish) $(whoami)

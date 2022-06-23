@@ -13,7 +13,7 @@ else
 fi
 
 printf 'Installing Homebrew packages...\n'
-{{ if (eq .chezmoi.os "darwin") }}
+{{ if (eq .chezmoi.os "darwin") -}}
 brew bundle --no-lock --file=/dev/stdin <<EOF
 brew "bat"
 brew "exa"
@@ -27,11 +27,8 @@ brew "rbenv"
 brew "the_silver_searcher"
 brew "tmux"
 brew "wget"
-
-# Terminal
-cask 'iterm2'
 EOF
-{{ else if (eq .chezmoi.os "linux") }}
+{{ else if (eq .chezmoi.os "linux") -}}
 brew bundle --no-lock --file=/dev/stdin <<EOF
 brew "bat"
 brew "exa"

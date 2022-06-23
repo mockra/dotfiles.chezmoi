@@ -1,6 +1,8 @@
 #!/usr/bin/env -S bash -x
 
 set -e
+exec > >(tee -i $HOME/dotfiles_install.log)
+exec 2>&1
 
 if [ ! "$(command -v chezmoi)" ]; then
   bin_dir="$HOME/.local/bin"
